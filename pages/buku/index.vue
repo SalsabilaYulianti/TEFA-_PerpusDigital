@@ -48,5 +48,6 @@
 
 .btn {
     background: #3894bb;
+    align-content: center;
     }
 </style>
