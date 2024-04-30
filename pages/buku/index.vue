@@ -15,11 +15,16 @@
                   <img src="~/assets/cover1.jpg" class="cover" alt="cover 1">
                 </div>
                 <nuxt-link to="/detail/alert">
-                <button type="submit" class="btn btn-lg rounded-5 text-white d-flex">Lihat Detail</button>
+                <button type="submit" class="btn btn-lg rounded-5 text-white">Lihat Detail</button>
                 </nuxt-link>
               </div>
             </div>
           </div>
+        </div>
+        <div class="button">
+          <nuxt-link to="/">
+              <button type="submit" class="btn btn-lg rounded-5 px-4 text-white">Kunjungan</button>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -49,5 +54,13 @@
 .btn {
     background: #3894bb;
     align-content: center;
-    }
+    margin-left: 20%;
+}
+
+.px-4{
+    background: #3894bb;
+    align-content: center;
+    margin-left: 90%;
+    margin-top: 14%;
+}
 </style>
