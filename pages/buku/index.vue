@@ -23,7 +23,7 @@
         </div>
         <div class="button">
           <nuxt-link to="/">
-              <button type="submit" class="btn btn-lg rounded-5 px-4 text-white">Kunjungan</button>
+              <button type="submit" class="btn btn-lg rounded-5 px-4 text-white float-end">Kunjungan</button>
           </nuxt-link>
         </div>
       </div>

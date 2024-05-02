@@ -82,6 +82,7 @@
 
     .btn {
     background: #3894bb;
+    margin-left: 75%;
     }
 
     .content {
@@ -95,7 +96,7 @@
     }
 
     form {
-    background-color: #bfdeebc4;
+    background-color: #fdfdfdda;
     width: 30rem;
     }
 </style>

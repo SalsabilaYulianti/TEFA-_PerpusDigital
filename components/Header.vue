@@ -23,6 +23,13 @@
 </template>
 
 <style scoped>
+
+@media only screen and(max-width: 600px){
+  img {
+    width: 150px;
+    height:100px;
+  }
+}
 @import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap");
 h2 {
   font-family: "Inknut Antiqua", serif;

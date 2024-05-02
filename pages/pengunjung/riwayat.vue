@@ -4,11 +4,12 @@
       <div class="row">
         <div class="col-lg-12">
           <h2 class="text-center my-4">RIWAYAT KUNJUNGAN</h2>
-          <div class="my-3 text-munted">15 dari 15 kunjungan</div>
-          <table class="table border">
-            <thead>
+          <div class="my-3 text-munted layar">
+              15 dari 15 kunjungan
+            <table class="table border">
+              <thead>
               <tr>
-                <td>No</td>
+                <td >No</td>
                 <td>Tanggal</td>
                 <td>Waktu</td>
                 <td>Nama</td>
@@ -28,14 +29,14 @@
                 <td>Membaca</td>
               </tr>
             </tbody>
-            <nuxt-link to="/">
-            <button type="submit" class="btn btn-lg rounded-5 px-4 text-white">Kembali</button>
-            </nuxt-link>
-
-            <nuxt-link to="/buku/">
-            <button type="submit" class="btn btn-lg rounded-5 px-4 text-white">Cari buku</button>
-            </nuxt-link>
           </table>
+          <nuxt-link to="/buku/">
+            <button type="submit" class="btn btn-lg rounded-5 px-4 text-white float-end">Cari buku</button>
+          </nuxt-link>
+          <nuxt-link to="/">
+            <button type="submit" class="btn btn-lg rounded-5 px-4 text-white float-end">Kembali</button>
+          </nuxt-link>
+          </div>
         </div>
       </div>
     </div>
@@ -58,10 +59,17 @@
 
 .btn {
     background: #3894bb;
-    
     }
 
-table {
-    background-color: #bfdeebc4;
-  }
+/* table {
+    background-color: #fdfdfdda;
+  } */
+
+.layar{
+  background-color: #fdfdfddb;
+  height: 100%;
+}
+td{
+  border: 1px solid;
+}
 </style>
