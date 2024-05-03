@@ -1,9 +1,9 @@
 <template>
+    <div class="content">
     <div class="container-fluid">
-        <div class="content">
             <div class="row d-flex justify-content-center">
             <div class="col-lg-12 ">
-                <h2 class="text-center my-4 fw-bold font-inter">ISI CATATAN KUNJUNGAN</h2>
+                <strong><h2 class="text-center my-4 fw-bold font-inter">ISI CATATAN KUNJUNGAN</h2></strong>
                 <!-- <div class="offset-lg-2 col-lg-8"> -->
             </div>
                 <form class="rounded">
@@ -62,7 +62,7 @@
                     </select>
                     </div>
                     <nuxt-link to="pengunjung/riwayat">
-                    <button type="submit" class="btn btn-lg rounded-5 px-4 text-white ">Kirim</button>
+                    <button type="submit" class="btn btn-sm rounded-5 px-4 text-white ">Kirim</button>
                     </nuxt-link>
                 </form>
                 </div>

@@ -1,9 +1,9 @@
 <template>
-  <div class="row d-flex justify-content-center" style="background-color: #bfdeeb">
-    <div class="col-1">
+  <div class="row d-flex justify-content-center m-0" style="background-color: #bfdeeb; width: 100%; right: 0">
+    <div class="col-lg-1 col-2">
       <img src="@/assets/logo.png" alt="" style="width: 80%" />
     </div>
-    <div class="col-3 pt-3">
+    <div class="col-lg-3 col-10 pt-3">
       <h2>PERPUS DIGITAL</h2>
       <address>SMKN 4 TASIKMALAYA</address>
     </div>
@@ -23,13 +23,6 @@
 </template>
 
 <style scoped>
-
-@media only screen and(max-width: 600px){
-  img {
-    width: 150px;
-    height:100px;
-  }
-}
 @import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap");
 h2 {
   font-family: "Inknut Antiqua", serif;
