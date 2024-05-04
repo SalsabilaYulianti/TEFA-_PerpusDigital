@@ -1,3 +1,15 @@
+<script setup>
+const supabase = useSupabaseClient()
+const visitors = ref ([])
+
+const getPengunjung = async () => {
+  const { data, error } = await supabase.from("Pengunjung").select(`*, Keanggotaan(*), Keperluan(*)`).order('id', { ascending: false })
+  if(data) visitors.value = data
+}
+onMounted(() => getPengunjung())
+
+</script>
+
 <template>
   <div class="content">
     <div class="container-fluid">
@@ -5,7 +17,7 @@
         <div class="col-lg-12">
           <strong><h2 class="text-center my-4">RIWAYAT KUNJUNGAN</h2></strong>
           <div class="my-3 text-munted layar table-responsive">
-            15 dari 15 kunjungan
+            {{ visitors.length }} dari {{ visitors.length }} kunjungan
             <table class="table border">
               <thead>
                 <tr>
@@ -19,14 +31,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1.</td>
-                  <td>14 Maret 2024</td>
-                  <td>10.34</td>
-                  <td>Ananta</td>
-                  <td>Siswa</td>
-                  <td>XI PPLG 3</td>
-                  <td>Membaca</td>
+                <tr v-for="(visitor, i) in visitors" :key="i">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ visitor.tanggal }}</td>
+                  <td>{{ visitor.waktu }}</td>
+                  <td>{{ visitor.nama }}</td>
+                  <td>{{ visitor.Keanggotaan.nama }}</td>
+                  <td>{{ visitor.tingkat }} {{ visitor.jurusan }} {{ visitor.kelas }}</td>
+                  <td>{{ visitor.Keperluan.nama }}</td>
                 </tr>
               </tbody>
             </table>

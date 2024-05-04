@@ -1,3 +1,39 @@
+<script setup>
+const supabase = useSupabaseClient()
+const members = ref ([])
+const objectives = ref ([])
+const form = ref ({
+    nama: "",
+    keanggotaan: "",
+    tingkat: "",
+    jurusan: "",
+    kelas: "",
+    keperluan: "",
+})
+
+const kirimData = async () => {
+    const { error } = await supabase.from('Pengunjung').insert([form.value])
+    console.log(error)
+    if(!error) navigateTo('/pengunjung/riwayat')
+}
+
+const getKeanggotaan = async () => {
+    const { data, error } = await supabase.from('Keanggotaan').select('*')
+    if(data) members.value = data
+}
+
+const getKeperluan = async () => {
+    const { data, error } = await supabase.from('Keperluan').select('*')
+    if(data) objectives.value = data
+}
+
+onMounted(() => {
+    getKeanggotaan()
+    getKeperluan()
+})
+
+</script>
+
 <template>
     <div class="content">
     <div class="container-fluid">
@@ -6,25 +42,23 @@
                 <strong><h2 class="text-center my-4 fw-bold font-inter">ISI CATATAN KUNJUNGAN</h2></strong>
                 <!-- <div class="offset-lg-2 col-lg-8"> -->
             </div>
-                <form class="rounded">
+                <form @submit.prevent="kirimData" class="rounded">
                     <div class="mb-3">
                     <label for="nama">Nama</label>
-                    <input type="text" class="form-control form-control-lg rounded-5" autocomplete="off" />
+                    <input v-model="form.nama" type="text" class="form-control form-control-lg rounded-5" autocomplete="off" />
                     </div>
                     <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label" autocomplete="off">Keanggotaan</label>
-                    <select class="form-control form-control-lg form-select rounded-5">
+                    <select v-model="form.keanggotaan" class="form-control form-control-lg form-select rounded-5">
                         <option value=""></option>
-                        <option value="Siswa">Siswa</option>
-                        <option value="Guru">Guru</option>
-                        <option value="Staf">Staf</option>
-                        <option value="Umum">Umum</option>
+                        <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}</option>
                     </select>
                     </div>
-                    <div class="mb-3">
+                    <div v-if="form.keanggotaan == '2'" class="mb-3">
                     <div class="row">
+                        <label for="exampleInputEmail1" class="form-label" autocomplete="off">Kelas Lengkap</label>
                         <div class="col-md-4">
-                        <select class="form-control form-control-lg form-select tounded-5 mb-2">
+                        <select v-model="form.tingkat" class="form-control form-control-lg form-select tounded-5 mb-2">
                             <option value="">Tingkat</option>
                             <option value="X">X</option>
                             <option value="XI">XI</option>
@@ -32,17 +66,17 @@
                         </select>
                         </div>
                         <div class="col-md-4">
-                        <select class="form-control form-control-lg form-select tounded-5 mb-2">
+                        <select v-model="form.jurusan" class="form-control form-control-lg form-select tounded-5 mb-2">
                             <option value="">Jurusan</option>
-                            <option value="X">PPLG</option>
-                            <option value="XI">TJKT</option>
-                            <option value="XII">TBSM</option>
-                            <option value="XII">DKV</option>
-                            <option value="XII">TOI</option>
+                            <option value="PPLG">PPLG</option>
+                            <option value="TJKT">TJKT</option>
+                            <option value="TBSM">TBSM</option>
+                            <option value="DKV">DKV</option>
+                            <option value="TOI">TOI</option>
                         </select>
                         </div>
                         <div class="col-md-4">
-                        <select class="form-control form-control-lg form-select tounded-5 mb-2">
+                        <select v-model="form.kelas" class="form-control form-control-lg form-select tounded-5 mb-2">
                             <option value="">Kelas</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -54,16 +88,12 @@
                     </div>
                     <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Keperluan</label>
-                    <select class="form-control form-control-lg form-select rounded-5">
+                    <select v-model="form.keperluan" class="form-control form-control-lg form-select rounded-5">
                         <option value=""></option>
-                        <option value="baca">Baca Buku</option>
-                        <option value="pinjam">Meminjam Buku</option>
-                        <option value="kembalikan">Kembalikan Buku</option>
+                        <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
                     </select>
                     </div>
-                    <nuxt-link to="pengunjung/riwayat">
                     <button type="submit" class="btn btn-sm rounded-5 px-4 text-white ">Kirim</button>
-                    </nuxt-link>
                 </form>
                 </div>
             </div>
