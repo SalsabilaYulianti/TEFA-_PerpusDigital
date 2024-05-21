@@ -115,11 +115,11 @@ onMounted(() => {
     margin-left: 75%;
     }
 
-    .content {
+    /* .content {
     background-image: url("assets/bg.png");
     background-size: cover;
     height: 100vh;
-    }
+    } */
 
     .form-control {
     background: #d9d9d9;
