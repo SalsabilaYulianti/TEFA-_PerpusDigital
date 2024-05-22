@@ -36,13 +36,13 @@ onMounted(() => {
 
 <template>
     <div class="content">
-    <div class="container-fluid">
+    <div class="container-fluid mb-5">
             <div class="row d-flex justify-content-center">
             <div class="col-lg-12 ">
                 <strong><h2 class="text-center my-4 fw-bold font-inter">ISI CATATAN KUNJUNGAN</h2></strong>
                 <!-- <div class="offset-lg-2 col-lg-8"> -->
             </div>
-                <form @submit.prevent="kirimData" class="rounded">
+                <form @submit.prevent="kirimData" class="rounded mb-5">
                     <div class="mb-3">
                     <label for="nama">Nama</label>
                     <input v-model="form.nama" type="text" class="form-control form-control-lg rounded-5" autocomplete="off" />
@@ -93,7 +93,7 @@ onMounted(() => {
                         <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
                     </select>
                     </div>
-                    <button type="submit" class="btn btn-sm rounded-5 px-4 text-white ">Kirim</button>
+                    <button type="submit" class="btn btn-sm rounded-2 px-4 text-white mb- 5">Kirim</button>
                 </form>
                 </div>
             </div>

@@ -43,10 +43,10 @@ onMounted(() => getPengunjung())
               </tbody>
             </table>
             <nuxt-link to="/buku/">
-              <button type="submit" class="btn btn-sm rounded-5 px-4 text-white float-end">Cari buku</button>
+              <button type="submit" class="btn btn-sm rounded-2 px-4 text-white float-end">Cari buku</button>
             </nuxt-link>
             <nuxt-link to="/">
-              <button type="submit" class="btn btn-sm rounded-5 px-4 text-white float-end">Kembali</button>
+              <button type="submit" class="btn btn-sm rounded-2 px-4 text-white float-end">Kembali</button>
             </nuxt-link>
           </div>
         </div>
