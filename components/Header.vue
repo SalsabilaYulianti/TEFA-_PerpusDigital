@@ -8,18 +8,6 @@
       <address>SMKN 4 TASIKMALAYA</address>
     </div>
   </div>
-  <!-- <div class="row p-3 d-flex justify-content-center" style="background-color: #BFDEEB;">
-      <div class="col-lg-1 col-3">
-          <img src="@/assets/logo.png" alt="logo SMKN 4">
-      </div>
-
-      <div class="col-lg-11 col-9">
-          <h2>PERPUS DIGITAL</h2>
-          <address>
-              SMKN 4 TASIKMALAYA
-          </address>
-      </div>
-  </div> -->
 </template>
 
 <style scoped>
