@@ -36,7 +36,7 @@ onMounted(() => {
 
 <template>
     <div class="content">
-    <div class="container-fluid mb-5">
+    <div class="container-fluid my-5">
             <div class="row d-flex justify-content-center">
             <div class="col-lg-12 ">
                 <strong><h2 class="text-center my-4 fw-bold font-inter">ISI CATATAN KUNJUNGAN</h2></strong>
@@ -50,7 +50,6 @@ onMounted(() => {
                     <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label" autocomplete="off">Keanggotaan</label>
                     <select v-model="form.keanggotaan" class="form-control form-control-lg form-select rounded-5">
-                        <option value=""></option>
                         <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}</option>
                     </select>
                     </div>
@@ -59,7 +58,7 @@ onMounted(() => {
                         <label for="exampleInputEmail1" class="form-label" autocomplete="off">Kelas Lengkap</label>
                         <div class="col-md-4">
                         <select v-model="form.tingkat" class="form-control form-control-lg form-select tounded-5 mb-2">
-                            <option value="">Tingkat</option>
+                            <option disabled value="">Tingkat</option>
                             <option value="X">X</option>
                             <option value="XI">XI</option>
                             <option value="XII">XII</option>
@@ -67,7 +66,7 @@ onMounted(() => {
                         </div>
                         <div class="col-md-4">
                         <select v-model="form.jurusan" class="form-control form-control-lg form-select tounded-5 mb-2">
-                            <option value="">Jurusan</option>
+                            <option disabled value="">Jurusan</option>
                             <option value="PPLG">PPLG</option>
                             <option value="TJKT">TJKT</option>
                             <option value="TBSM">TBSM</option>
@@ -77,7 +76,7 @@ onMounted(() => {
                         </div>
                         <div class="col-md-4">
                         <select v-model="form.kelas" class="form-control form-control-lg form-select tounded-5 mb-2">
-                            <option value="">Kelas</option>
+                            <option disabled value="">Kelas</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -89,7 +88,6 @@ onMounted(() => {
                     <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Keperluan</label>
                     <select v-model="form.keperluan" class="form-control form-control-lg form-select rounded-5">
-                        <option value=""></option>
                         <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
                     </select>
                     </div>

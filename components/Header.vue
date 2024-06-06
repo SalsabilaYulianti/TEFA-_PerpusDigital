@@ -1,9 +1,9 @@
 <template>
   <div class="row d-flex justify-content-center m-0" style="background-color: #bfdeeb; width: 100%; right: 0">
-    <div class="col-lg-1 col-2">
-      <img src="@/assets/logo.png" alt="" style="width: 80%" />
+    <div class="col-lg-1 col-md-2 col-sm-3 col-3">
+      <img src="@/assets/logo.png" alt="" style="width: 100px;" class="img-fluid"/>
     </div>
-    <div class="col-lg-3 col-10 pt-3">
+    <div class="col-lg-4 col-md-9 col-sm-10 col-12 d-flex align-items-center flex-column pt-3 text-start">
       <h2>PERPUS DIGITAL</h2>
       <address>SMKN 4 TASIKMALAYA</address>
     </div>
@@ -23,9 +23,10 @@ address {
   font-family: "Inria Serif", serif;
   font-weight: 500;
   font-style: normal;
+  margin: 0px;
 }
 
-img {
-  width: 95px;
-}
-</style>
+/* img {
+  width: 80px;
+} */
+</style>  

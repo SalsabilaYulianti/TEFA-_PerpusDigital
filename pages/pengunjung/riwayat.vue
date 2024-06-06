@@ -63,14 +63,10 @@ onMounted(() => getPengunjung())
   font-weight: 500;
   font-style: normal;
 }
-/* .content {
-  background-image: url("assets/bg.png");
-  background-size: cover;
-  height: 100vh;
-} */
 
 .btn {
   background: #3894bb;
+  margin-left: auto;
 }
 
 /* table {

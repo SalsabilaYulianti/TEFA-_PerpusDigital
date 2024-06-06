@@ -50,16 +50,16 @@ onMounted(() => {
                 <div class="modal fade" :id="`buku-${buku.id}`">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                      <div class="modal-body row">
-                        <div class="col-lg-4 col-6">
+                      <div class="modal-body row d-flex justify-content-center">
+                        <div class="col-lg-4 col-md-5 col-sm-6 col-7">
                           <img :src="buku.cover" class="cover" alt="cover 1" />
-                          <div class="row"></div>
+                          <!-- <div class="row"></div> -->
                         </div>
-                        <div class="col-lg-8 col-6">
+                        <div class="col-lg-8 col-md-7 col-sm-6 col-6">
                           <div class="row ">
                             <h4>DETAIL BUKU</h4>
                           </div>
-                          <div class="row col-6">
+                          <div class="row ">
                             <p>Judul : {{ buku.judul }}</p>
                             <p>Kategori : {{  buku.kategori }}</p>
                             <p>Rak : {{ buku.rak }}</p>
